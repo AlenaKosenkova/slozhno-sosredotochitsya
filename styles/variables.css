@@ -8,4 +8,6 @@
   --margins: 10px;
   --font-size: 18px;
   --font:'IBM Plex mono', sans-serif;
+  --bg-color:#000028;
+  --text-bold:700;
 }
