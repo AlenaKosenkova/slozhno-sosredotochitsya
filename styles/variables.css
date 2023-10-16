@@ -7,4 +7,5 @@
   --accent-color: #FF0070; /*цвет тени заголовка, цвет фона заголовков, цвет некоторых фраз*/
   --margins: 10px;
   --font-size: 18px;
+  --font:'IBM Plex mono', sans-serif;
 }

@@ -1,5 +1,33 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
 .page {
+  box-sizing: border-box;
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
+  margin: var(--margins);
+}
+
+.rec{
+  display: grid;
+  grid-template-columns: min-content min-content;
+  gap:var(--margins);
+  justify-content: end;
+  align-items: center;
+}
+
+.rec::before{
+  content: "REC";
+  display: block;
+  font-family: var(--font);
+  color:var(--accent-color);
+}
+
+.rec::after{
+  --size-rec:9px;
+  content:"";
+  display: block;
+  width:var(--size-rec);
+  height:var(--size-rec);
+  background-color: var(--accent-color);
+  border-radius: 50%;
+  box-shadow: 0px 0px 4px #FF0070;
 }
