@@ -16,5 +16,7 @@
   --button-padding-size: 13px;
   --border-slim: 1px solid;
   --components-gap:40px;
-  --section-gap:20px;
+  --section-gap:50px;
+  --paragraph-gap:20px;
+  --text-gap:10px;
 }

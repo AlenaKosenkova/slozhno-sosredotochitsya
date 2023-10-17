@@ -2,6 +2,7 @@
 
 .page {
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
+  width: 100%;
   box-sizing: border-box;
   display: grid;
   gap:var(--components-gap);
@@ -15,6 +16,10 @@
 }
 
 .header{
+  display: grid;
+  grid-template-rows: 25px auto auto auto 25px;
+  align-items: center;
+  height: 100vh;
   --size-border:25px;
 }
 
@@ -73,7 +78,7 @@
   justify-content: end;
 
   /*в макете указан отступ от начала экрана*/
-  margin-block-start: calc(75px - var(--margins) - var(--size-border));
+  /*margin-block-start: calc(75px - var(--margins) - var(--size-border));*/
 }
 
 .header__theme-menu-button {
@@ -88,41 +93,50 @@
 }
 
 .header__theme-menu-button_active {
-  outline: 1px solid var(--accent-color);
+  outline: var(--border-slim) var(--accent-color);
 }
 
 .title {
-  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
-  line-height: 82.5%;
+  grid-row: 3/4;
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);/*Разобраться с этим*/
+  line-height: 82.5%;/*Разобраться с этим*/
   font-weight: var(--text-bold);
   text-shadow: 4px 4px 0px var(--accent-color);
   color: #db00ff;
   font-family: inherit;
-  margin-block-start: 65px;
 }
 
 .article {
+  grid-row: 4/5;
   color: var(--bg-color);
   background-color: var(--accent-color);
   line-height: var(--line-height-bold);
   font-weight: var(--text-bold);
-  margin-block-start: 55px;
-  margin-block-end: 66px;
 }
 
-.section{
+.main {
   display: grid;
   gap:var(--section-gap);
   line-height: var(--line-height-bold);
 }
 
-.section__title{
+.section {
+  display: grid;
+  gap:var(--paragraph-gap);
+}
+
+.paragraph {
+  display: grid;
+  gap:var(--text-gap);
+}
+
+.section__title {
   font-size: inherit;
   font-weight: var(--text-bold);
   color: var(--accent-color);
 }
 
-.paragraph__title{
+.paragraph__title, .sub-paragraph__title {
   --accent-color:#000028;
   --bg-color:#ff0070;
   background-color: var(--bg-color);
@@ -131,13 +145,32 @@
   font-weight: var(--text-bold);
 }
 
+.sub-paragraph__title {
+  font-weight: var(--text-slim);
+}
+
 .link{
   text-decoration: none;
   text-shadow: 2px 2px 0px var(--accent-color);
 }
 
-.paragraph{
+.paragraph__text {
   font-size: inherit;
   color: var(--paragraph-color);
   font-weight: var(--text-slim);
+}
+
+.gallery__picture{
+  width:355px;
+}
+
+.footer{
+  height: 100vh;
+  margin: auto;
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  line-height: 82.5%;
+  font-weight: var(--text-bold);
+  text-shadow: 4px 4px 0px var(--accent-color);
+  color: #db00ff;
+  font-family: inherit;
 }
