@@ -3,7 +3,7 @@
 .page {
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
   box-sizing: border-box;
-  display: flex;
+  display: grid;
   gap:var(--gap-between-components);
   padding: var(--margins);
   font-family: var(--font);
@@ -15,24 +15,25 @@
 }
 
 .header{
+  --size-border:25px;
   display: flexbox;
 }
 
-.header::before{
+.header::before, .header::after{
   content: "";
   display: block;
-  inline-size: 25px;
-  block-size: 25px;
+  inline-size: var(--size-border);
+  block-size: var(--size-border);
+}
+
+.header::before{
   border-block-start: var(--border-slim) var(--accent-color);
   border-inline-end: var(--border-slim) var(--accent-color);
   margin-inline-start: auto;
+
 }
 
 .header::after{
-  content: "";
-  display: block;
-  inline-size: 25px;
-  block-size: 25px;
   border-block-end: var(--border-slim) var(--accent-color);
   border-inline-start: var(--border-slim) var(--accent-color);
   margin-block-start: auto;
@@ -42,7 +43,6 @@
   display: grid;
   grid-template-columns: min-content min-content;
   position: absolute;
-  gap: var(--margins);
   justify-content: end;
   align-items: center;
   color: var(--accent-color);
@@ -74,10 +74,11 @@
   justify-content: end;
 
   /*в макете указан отступ от начала экрана*/
-  margin-block-start: calc(75px - var(--margins));
+  margin-block-start: calc(75px - var(--margins) - var(--size-border));
 }
 
 .header__theme-menu-button {
+  height:26px;
   text-transform: lowercase;
   background-color: transparent;
   border: none;
@@ -85,11 +86,10 @@
   padding-inline-end: var(--button-padding-size);
   font-size: inherit;
   color: var(--accent-color);
-  margin: auto;
 }
 
 .header__theme-menu-button_active {
-  border: 1px solid var(--accent-color);
+  outline: 1px solid var(--accent-color);
 }
 
 .title {
