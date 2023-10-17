@@ -4,7 +4,7 @@
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
   box-sizing: border-box;
   display: grid;
-  gap:var(--gap-between-components);
+  gap:var(--components-gap);
   padding: var(--margins);
   font-family: var(--font);
   font-size: var(--font-size);
@@ -16,7 +16,6 @@
 
 .header{
   --size-border:25px;
-  display: flexbox;
 }
 
 .header::before, .header::after{
@@ -105,8 +104,40 @@
 .article {
   color: var(--bg-color);
   background-color: var(--accent-color);
-  line-height: 130%;
+  line-height: var(--line-height-bold);
   font-weight: var(--text-bold);
   margin-block-start: 55px;
   margin-block-end: 66px;
+}
+
+.section{
+  display: grid;
+  gap:var(--section-gap);
+  line-height: var(--line-height-bold);
+}
+
+.section__title{
+  font-size: inherit;
+  font-weight: var(--text-bold);
+  color: var(--accent-color);
+}
+
+.paragraph__title{
+  --accent-color:#000028;
+  --bg-color:#ff0070;
+  background-color: var(--bg-color);
+  font-size: inherit;
+  color:var(--accent-color);
+  font-weight: var(--text-bold);
+}
+
+.link{
+  text-decoration: none;
+  text-shadow: 2px 2px 0px var(--accent-color);
+}
+
+.paragraph{
+  font-size: inherit;
+  color: var(--paragraph-color);
+  font-weight: var(--text-slim);
 }

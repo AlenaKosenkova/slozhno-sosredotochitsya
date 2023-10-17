@@ -4,13 +4,17 @@
 */
 
 :root {
+  --bg-color: #000028;
   --accent-color: #ff0070; /*цвет тени заголовка, цвет фона заголовков, цвет некоторых фраз*/
+  --paragraph-color:#F1B2CE;
   --margins: 10px;
   --font-size: 18px;
   --font: "IBM Plex mono", sans-serif;
-  --bg-color: #000028;
   --text-bold: 700;
+  --text-slim:400;
+  --line-height-bold:130%;
   --button-padding-size: 13px;
   --border-slim: 1px solid;
-  --gap-between-components:40px;
+  --components-gap:40px;
+  --section-gap:20px;
 }
