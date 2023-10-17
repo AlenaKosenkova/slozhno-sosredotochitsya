@@ -3,11 +3,14 @@
   и их переопределение под различные устройства
 */
 
-:root{
-  --accent-color: #FF0070; /*цвет тени заголовка, цвет фона заголовков, цвет некоторых фраз*/
+:root {
+  --accent-color: #ff0070; /*цвет тени заголовка, цвет фона заголовков, цвет некоторых фраз*/
   --margins: 10px;
   --font-size: 18px;
-  --font:'IBM Plex mono', sans-serif;
-  --bg-color:#000028;
-  --text-bold:700;
+  --font: "IBM Plex mono", sans-serif;
+  --bg-color: #000028;
+  --text-bold: 700;
+  --button-padding-size: 13px;
+  --border-slim: 1px solid;
+  --gap-between-components:40px;
 }

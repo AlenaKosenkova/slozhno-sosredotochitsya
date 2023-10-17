@@ -3,72 +3,110 @@
 .page {
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
   box-sizing: border-box;
+  display: flex;
+  gap:var(--gap-between-components);
   padding: var(--margins);
   font-family: var(--font);
   font-size: var(--font-size);
+  background-color: var(--bg-color);
+  background-image: url(../images/cover-image-dark.png);
+  background-attachment: fixed;
+  background-position: center;
 }
 
-.rec{
+.header{
+  display: flexbox;
+}
+
+.header::before{
+  content: "";
+  display: block;
+  inline-size: 25px;
+  block-size: 25px;
+  border-block-start: var(--border-slim) var(--accent-color);
+  border-inline-end: var(--border-slim) var(--accent-color);
+  margin-inline-start: auto;
+}
+
+.header::after{
+  content: "";
+  display: block;
+  inline-size: 25px;
+  block-size: 25px;
+  border-block-end: var(--border-slim) var(--accent-color);
+  border-inline-start: var(--border-slim) var(--accent-color);
+  margin-block-start: auto;
+}
+
+.rec {
   display: grid;
   grid-template-columns: min-content min-content;
-  gap:var(--margins);
+  position: absolute;
+  gap: var(--margins);
   justify-content: end;
   align-items: center;
-  color:var(--accent-color);
+  color: var(--accent-color);
+  inset-block-start: var(--margins);
+  inset-inline-end: var(--margins);
 }
 
-.rec::before{
+.rec::before {
   content: "REC";
   display: block;
 }
 
-.rec::after{
-  --size-rec:9px;
-  content:"";
+.rec::after {
+  --size-rec: 9px;
+  content: "";
   display: block;
-  width:var(--size-rec);
-  height:var(--size-rec);
+  width: var(--size-rec);
+  height: var(--size-rec);
   background-color: var(--accent-color);
   border-radius: 50%;
   box-shadow: 0px 0px 4px var(--accent-color);
+  margin: var(--margins);
 }
 
-.header__theme-menu-list{
+.header__theme-menu-list {
   display: grid;
   gap: var(--margins);
   list-style: none;
   justify-content: end;
-  margin-top: 40px;
+
+  /*в макете указан отступ от начала экрана*/
+  margin-block-start: calc(75px - var(--margins));
 }
 
-.header__theme-menu-button{
+.header__theme-menu-button {
   text-transform: lowercase;
   background-color: transparent;
   border: none;
-  width: 70px;
-  height: 23px;
+  padding-inline-start: var(--button-padding-size);
+  padding-inline-end: var(--button-padding-size);
   font-size: inherit;
   color: var(--accent-color);
   margin: auto;
 }
 
-.header__theme-menu-button_active{
+.header__theme-menu-button_active {
   border: 1px solid var(--accent-color);
 }
 
-.title{
-  font-size: 116px;
+.title {
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   line-height: 82.5%;
   font-weight: var(--text-bold);
   text-shadow: 4px 4px 0px var(--accent-color);
-  color: #DB00FF;
+  color: #db00ff;
   font-family: inherit;
+  margin-block-start: 65px;
 }
 
-.article{
-  color:var(--bg-color);
+.article {
+  color: var(--bg-color);
   background-color: var(--accent-color);
   line-height: 130%;
   font-weight: var(--text-bold);
-  margin-top: 55px;
+  margin-block-start: 55px;
+  margin-block-end: 66px;
 }
