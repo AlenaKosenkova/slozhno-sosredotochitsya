@@ -17,37 +17,33 @@
 
 .header{
   display: grid;
-  grid-template-rows: 25px auto auto auto 25px;
+  grid-template-rows: var(--size-border) repeat(3, auto) var(--size-border);
   align-items: center;
   height: 100vh;
-  --size-border:25px;
 }
 
-.header::before, .header::after{
+.header::before, .footer::before, .header::after, .footer::after{
   content: "";
-  display: block;
   inline-size: var(--size-border);
   block-size: var(--size-border);
 }
 
-.header::before{
+.header::before, .footer::before{
+  justify-self: end;
   border-block-start: var(--border-slim) var(--accent-color);
   border-inline-end: var(--border-slim) var(--accent-color);
-  margin-inline-start: auto;
-
 }
 
-.header::after{
+.header::after, .footer::after{
+  justify-self: start;
   border-block-end: var(--border-slim) var(--accent-color);
   border-inline-start: var(--border-slim) var(--accent-color);
-  margin-block-start: auto;
 }
 
 .rec {
   display: grid;
   grid-template-columns: min-content min-content;
   position: absolute;
-  justify-content: end;
   align-items: center;
   color: var(--accent-color);
   inset-block-start: var(--margins);
@@ -56,19 +52,22 @@
 
 .rec::before {
   content: "REC";
-  display: block;
 }
 
 .rec::after {
   --size-rec: 9px;
   content: "";
-  display: block;
   width: var(--size-rec);
   height: var(--size-rec);
   background-color: var(--accent-color);
   border-radius: 50%;
   box-shadow: 0px 0px 4px var(--accent-color);
   margin: var(--margins);
+}
+
+.header__theme-menu{
+  grid-row: 2/3;
+  justify-self: end;
 }
 
 .header__theme-menu-list {
@@ -103,7 +102,6 @@
   font-weight: var(--text-bold);
   text-shadow: 4px 4px 0px var(--accent-color);
   color: #db00ff;
-  font-family: inherit;
 }
 
 .article {
@@ -165,8 +163,14 @@
 }
 
 .footer{
+  display: grid;
+  grid-template-rows: var(--size-border) 1fr var(--size-border);
   height: 100vh;
-  margin: auto;
+  align-items: center;
+  justify-items: center;
+}
+
+.footer__title{
   font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   line-height: 82.5%;
   font-weight: var(--text-bold);
