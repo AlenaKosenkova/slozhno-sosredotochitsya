@@ -192,7 +192,7 @@
   font-family: inherit;
 }
 
-@media (width > 375px) and (width <= 768px) {
+@media (width > 375px) {
   .page {
     --margins: 20px;
     padding: var(--margins);
