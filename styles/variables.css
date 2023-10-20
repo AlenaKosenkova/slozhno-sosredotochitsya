@@ -22,4 +22,5 @@
   --paragraph-gap:20px;
   --text-gap:10px;
   --size-border:25px;
+  --scrollbar-width:calc(100vw - 100%);/*ширины полосы прокрутки*/
 }

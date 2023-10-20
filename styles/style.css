@@ -82,9 +82,6 @@
   display: grid;
   gap: var(--margins);
   list-style: none;
-
-  /*в макете указан отступ от начала экрана*/
-  /*margin-block-start: calc(75px - var(--margins) - var(--size-border));*/
 }
 
 .header__theme-menu-button {
@@ -171,8 +168,14 @@
   font-weight: var(--text-slim);
 }
 
-.gallery__picture {
-  width: 355px;
+.picture__gallery{
+  display:grid;
+  gap:var(--text-gap);
+}
+
+.gallery__image {
+  /*ширина картинок, чтобы не возникло полосы прокрутки*/
+  width:calc(100vw - var(--scrollbar-width));
 }
 
 .footer {
@@ -214,8 +217,35 @@
   .section__column .section__title{
     grid-row:1/3;
   }
+  .picture__gallery{
+    gap:var(--paragraph-gap);
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: repeat(3, auto);
+    grid-template-areas: 
+    "a a b"
+    "c d b"
+    "c e e";
+  }
+  .gallery__image:nth-of-type(1){
+    grid-area: a;
+  }
+  .gallery__image:nth-of-type(2){
+    grid-area: b;
+  }
+  .gallery__image:nth-of-type(3){
+    grid-area: c;
+  }
+  .gallery__image:nth-of-type(4){
+    grid-area: d;
+  }
+  .gallery__image:nth-of-type(5){
+    grid-area: e;
+  }
+  .gallery__image{
+    object-fit: cover;
+    height: 100%;
+  }
 }
-
 @media (width > 768px) {
   .header::before{
     grid-column: 2;
