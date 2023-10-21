@@ -4,33 +4,85 @@
   переключая тему
 */
 
-:root.theme-dark {
-  /* Дублируем переменные для тёмной темы */
-
+:root.theme_dark {
   --bg-color: #000028;
-  --accent-color: #ff0070; /*цвет тени заголовка, цвет фона заголовков, цвет некоторых фраз*/
+  --accent-color: #ff0070;
   --paragraph-color:#F1B2CE;
   --title-color:#db00ff;
   --article-color:#000028;
 }
-
-@media (prefers-color-scheme: dark) {
-  :root {
-        /* Дублируем переменные светлой темы */  
-        --bg-color: #000028;
-        --accent-color: #ff0070; /*цвет тени заголовка, цвет фона заголовков, цвет некоторых фраз*/
-        --paragraph-color:#F1B2CE;
-        --title-color:#db00ff;
-        --article-color:#000028;  
-    }
-    .rec{
-      visibility: visible;
-    }
-  }
 
 .page.theme_dark {
   /* сохраните этот селектор в приведённом виде.
     Так стили написанные ниже будут иметь больший вес,
     чем стили в медиазапросе предпочтений пользователя
   */
+  background-image: url(../images/cover-image-dark.png);
 }
+
+.theme_dark .header::before, 
+.theme_dark .header::after, 
+.theme_dark .header__theme-menu-button, 
+.theme_dark .title,
+.theme_dark .section__title, 
+.theme_dark .footer::before, 
+.theme_dark .footer::after,
+.theme_dark .footer__title,
+.theme_dark .rec,
+.theme_dark .article,
+.theme_dark .link {
+  --accent-color: #ff0070;
+}
+
+.theme_dark .rec{
+  visibility: visible;
+}
+
+.theme_dark .title, 
+.theme_dark .footer__title{
+  --title-color:#db00ff;
+}
+
+.theme_dark .article{
+  --article-color:#000028;
+  color: var(--article-color);
+}
+
+.theme_dark .paragraph__title, 
+.theme_dark .sub-paragraph__title{
+  --bg-color:#ff0070;
+  --accent-color: #000028;
+}
+
+.theme_dark .paragraph__text{
+  --paragraph-color:#F1B2CE;
+  color: var(--paragraph-color);
+}
+@media (prefers-color-scheme: dark) {
+  :root{
+        --bg-color: #000028;
+        --accent-color: #ff0070;
+        --paragraph-color:#F1B2CE;
+        --title-color:#db00ff;
+        --article-color:#000028; 
+    }
+    .page {
+      background-image: url(../images/cover-image-dark.png);
+    }
+    .header::before, 
+    .header::after, 
+    .header__theme-menu-button, 
+    .section__title, 
+    .footer::before, 
+    .footer::after{
+      --accent-color: #ff0070;
+    }
+    .rec{
+      visibility: visible;
+    }
+    .paragraph__title, 
+    .sub-paragraph__title{
+      --accent-color: #000028;
+      --bg-color: #ff0070;
+    }
+  }

@@ -4,15 +4,12 @@
   переключая тему
 */
 
-/* Остальные стили */
-
 :root.theme_light {
-  /* Переменные светлой темы */  
-  --bg-color: #FFF1F7;
-  --accent-color: #FF8DCB; /*цвет тени заголовка, цвет фона заголовков, цвет некоторых фраз*/
-  --paragraph-color:#353430; 
-  --title-color:#FFC2E6;
-  --article-color:#353430;
+  --bg-color: #fff1f7;
+  --accent-color: #ff8dcb;
+  --paragraph-color: #353430;
+  --title-color: #ffc2e6;
+  --article-color: #353430;
 }
 
 .page.theme_light {
@@ -20,61 +17,90 @@
     Так стили написанные ниже будут иметь больший вес,
     чем стили в медиазапросе предпочтений пользователя
   */
+
+  /*Посмотреть цвет в Figma*/
+
+  /*background-color: var(--bg-color);*/
   background-image: url(../images/cover-image-light.png);
 }
 
-.header::before, 
-.header::after, 
-.header__theme-menu-button, 
-.section__title, 
-.footer::before, 
-.footer::after{
+.theme_light .header::before,
+.theme_light .header::after,
+.theme_light .header__theme-menu-button,
+.theme_light .section__title,
+.theme_light .paragraph__title,
+.theme_light .sub-paragraph__title,
+.theme_light .footer::before,
+.theme_light .footer::after {
   --accent-color: #353430;
 }
 
-.rec{
+.theme_light .rec {
   visibility: hidden;
 }
 
-/*.title{
-  --title-color:#FFC2E6;
-  --accent-color: #FF8DCB;
+.theme_light .title,
+.theme_light .article,
+.theme_light .footer__title {
+  --title-color: #ffc2e6;
+  --accent-color: #ff8dcb;
 }
 
-.article{
-  color: var(--article-color);
-  background-color: var(--accent-color);
-}*/
+.theme_light .paragraph__title,
+.theme_light .sub-paragraph__title {
+  --bg-color: #ff8dcb;
+}
 
-.paragraph__title, .sub-paragraph__title{
-  --accent-color:#353430;
-  --bg-color: #FF8DCB;
+.theme_light .paragraph__text {
+  --paragraph-color: #353430;
 }
 
 @media (prefers-color-scheme: light) {
   :root {
-    /* Дублируем переменные светлой темы */    
-    --bg-color: #FFF1F7;
-    --accent-color: #FF8DCB; /*цвет тени заголовка, цвет фона заголовков, цвет некоторых фраз*/
-    --paragraph-color:#353430; 
-    --title-color:#FFC2E6;
-    --article-color:#353430;
-    }
-  
-    .page{
-      background-image: url(../images/cover-image-light.png);
-    }
-  
-    .header::before, .header::after, .header__theme-menu-button, .section__title, .footer::before, .footer::after{
-      --accent-color: #353430;
-    }
-  
-    .rec{
-      visibility: hidden;
-    }
-  
-    .paragraph__title, .sub-paragraph__title{
-      --accent-color:#353430;
-      --bg-color: #FF8DCB;
-    }
+    --bg-color: #fff1f7;
+    --accent-color: #ff8dcb;
+    --paragraph-color: #353430;
+    --title-color: #ffc2e6;
+    --article-color: #353430;
+  }
+  .page {
+    background-image: url(../images/cover-image-light.png);
+  }
+
+  .header::before,
+  .header::after,
+  .header__theme-menu-button,
+  .section__title,
+  .paragraph__titlet,
+  .sub-paragraph__title,
+  .footer::before,
+  .footer::after {
+    --accent-color: #353430;
+  }
+
+  .rec {
+    visibility: hidden;
+  }
+
+  .title,
+  .article,
+  .footer__title {
+    --title-color: #ffc2e6;
+    --accent-color: #ff8dcb;
+  }
+
+  .article {
+    color: var(--article-color);
+    background-color: var(--accent-color);
+  }
+
+  .paragraph__title,
+  .sub-paragraph__title {
+    --accent-color: #353430;
+    --bg-color: #ff8dcb;
+  }
+
+  .paragraph__text {
+    --paragraph-color: #353430;
+  }
 }
