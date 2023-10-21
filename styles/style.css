@@ -3,7 +3,6 @@
 .page {
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
   width: 100%;
-  max-width: 1024px;
   box-sizing: border-box;
   display: grid;
   gap: var(--components-gap);
@@ -102,7 +101,21 @@
 }
 
 .header__theme-menu-button_active {
+  pointer-events: none;
   outline: var(--border-slim) var(--accent-color);
+}
+
+.header__theme-menu-button:hover{
+  outline: var(--border-slim) var(--hover-outline-color);
+}
+
+.header__theme-menu-button:focus{
+  border: none;
+}
+
+.header__theme-menu-button:focus-visible{
+  outline: none;
+  border-block-end: var(--border-slim) var(--accent-color);
 }
 
 .title {
@@ -166,6 +179,18 @@
 .link {
   text-decoration: none;
   text-shadow: 2px 2px 0px var(--accent-color);
+}
+
+.link:hover{
+  border-bottom: 1px solid var(--paragraph-color);
+}
+
+.link:focus{
+  border: none;
+}
+
+.link:focus-visible {
+  outline:var(--border-slim) var(--paragraph-color);
 }
 
 .paragraph__text {
