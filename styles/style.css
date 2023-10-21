@@ -3,6 +3,7 @@
 .page {
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
   width: 100%;
+  min-width: 375px;
   box-sizing: border-box;
   display: grid;
   gap: var(--components-gap);
@@ -12,10 +13,15 @@
 
   /*Обязательно подобрать значение*/
   /*word-spacing: 1rem;*/
+  /*letter-spacing: 0.06rem;*/
   /*letter-spacing: 1rem;*/
 
+
+  word-spacing: 0.9rem;
+  
   background-color: var(--bg-color);
-  background-image: url(../images/cover-image.png);
+  background-image: url(../images/cover-image-dark.png);
+  background-size: cover;
   background-attachment: fixed;
   background-position: center;
 }
@@ -126,6 +132,7 @@
   /*Разобраться с этим*/
   line-height: 82.5%; 
 
+  letter-spacing:0.55rem;
   font-weight: var(--text-bold);
   text-shadow: 4px 4px 0px var(--accent-color);
   color: var(--title-color);
