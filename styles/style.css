@@ -100,17 +100,17 @@
   outline: var(--border-slim) var(--accent-color);
 }
 
-.header__theme-menu-button:focus{
+.header__theme-menu-button:focus {
   border: none;
 }
 
-.header__theme-menu-button:focus-visible{
+.header__theme-menu-button:focus-visible {
   outline: none;
   border-block-end: var(--border-slim) var(--accent-color);
 }
 
 .title, 
-.footer__title{
+.footer__title {
   /*Разобраться с этим*/
   /*Размер шрифта от 116px, до 120px,
   рекомендуемое значение: 
@@ -132,9 +132,9 @@
 
 .article {
   grid-row: 4/5;
-  color: var(--article-color);
   justify-self: end;
   background-color: var(--accent-color);
+  color: var(--article-color);
   line-height: var(--line-height-bold);
   font-weight: var(--text-bold);
 }
@@ -157,7 +157,7 @@
 
 .section__title,
 .paragraph__title,
-.sub-paragraph__title{
+.sub-paragraph__title {
   font-size: inherit;
   font-weight: var(--text-bold);
   color: var(--accent-color);
@@ -184,7 +184,7 @@
 }
 
 .link:focus-visible {
-  outline:var(--border-slim) var(--paragraph-color);
+  outline: var(--border-slim) var(--paragraph-color);
 }
 
 .paragraph__text {
@@ -221,10 +221,6 @@
     padding: var(--margins);
     --section-gap: 80px;
     --components-gap: 60px;
-  }
-
-  .header, .footer{
-    height:100vh;
   }
 
   .rec::after {
@@ -293,7 +289,12 @@
     grid-column: 2;
   }
 
-  .title, .footer__title{
+  .header, 
+  .footer {
+    height: 100vh;
+  }
+
+  .title, .footer__title {
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   }
 
@@ -307,7 +308,8 @@
     grid-auto-flow: column;
   }
 
-  .header__theme-menu-button:hover{
+  .header__theme-menu-button:hover {
+    cursor: pointer;
     outline: var(--border-slim) var(--hover-outline-color);
   }
 
@@ -323,7 +325,7 @@
   }
 
   .section__several__columns .section__title {
-    width:auto;
+    width: auto;
     grid-row: 1/2;
     grid-column: 1/2;
   }
@@ -337,7 +339,8 @@
     flex-direction: column;
   }
 
-  .link:hover{
+  .link:hover {
+    cursor: pointer;
     border-bottom: 1px solid var(--paragraph-color);
   }
 }
