@@ -8,6 +8,7 @@
   padding: var(--margins);
   font-family: var(--font);
   font-size: var(--font-size);  
+  line-height: var(--line-height-bold);
   background-color: var(--bg-color);
   background-image: url(../images/cover-image-dark.png);
   background-size: cover;
@@ -16,13 +17,26 @@
 }
 
 .header {
-  display: grid;
-  grid-template-rows: var(--size-border) repeat(3, auto) var(--size-border);
-  align-items: center;
-  height: 100dvh;
+  position: relative;
+  grid-template-rows: min-content repeat(3, auto) min-content;
+  padding-block-end: var(--margins);
 }
 
-.header::before,
+.header,
+.footer {
+  display: grid;
+  min-height: 100dvh;
+  align-items: center;/*КАЖЕТСЯ НЕ РАБОТАЕТ!!!!*/
+}
+
+@supports not (min-height: 100dvh) {
+  .header,
+  .footer {
+    min-height: 100vh;
+  }
+}
+
+/*.header::before,
 .footer::before,
 .header::after,
 .footer::after {
@@ -45,7 +59,7 @@
   justify-self: start;
   border-block-end: var(--border-slim) var(--accent-color);
   border-inline-start: var(--border-slim) var(--accent-color);
-}
+}*/
 
 .rec {
   display: grid;
@@ -54,8 +68,8 @@
   position: absolute;
   align-items: center;
   color: var(--accent-color);
-  inset-block-start: var(--margins);
-  inset-inline-end: var(--margins);
+  inset-block-start: 0;
+  inset-inline-end: 0;
 }
 
 .rec::before {
@@ -69,7 +83,7 @@
   height: var(--size-rec);
   background-color: var(--accent-color);
   border-radius: 50%;
-  box-shadow: 0px 0px 4px var(--accent-color);
+  box-shadow: 0 0 4px 2px var(--accent-color);
   margin: var(--margins);
 }
 
@@ -85,7 +99,6 @@
 }
 
 .header__theme-menu-button {
-  height: 26px;
   text-transform: lowercase;
   background-color: transparent;
   border: none;
@@ -119,7 +132,7 @@
   изменению ширины, также такой шрифт реагирует на
   изменение настроек пользователя 
   (если он сделает крупный шрифт в системе или браузере)*/
-  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem); 
+  font-size: var(--title-font-size); 
   line-height: 82.5%; 
   font-weight: var(--text-bold);
   color: var(--title-color);
@@ -133,21 +146,27 @@
 .article {
   grid-row: 4/5;
   justify-self: end;
+  font-weight: var(--text-bold);
+}
+
+.text-decor,
+.gallery .section__title {
   background-color: var(--accent-color);
   color: var(--article-color);
-  line-height: var(--line-height-bold);
-  font-weight: var(--text-bold);
 }
 
 .main {
   display: grid;
   gap: var(--section-gap);
-  line-height: var(--line-height-bold);
 }
 
 .section {
   display: grid;
   gap: var(--paragraph-gap);
+}
+
+.section__title {
+  color: var(--accent-color);
 }
 
 .paragraph {
@@ -160,15 +179,7 @@
 .sub-paragraph__title {
   font-size: inherit;
   font-weight: var(--text-bold);
-  color: var(--accent-color);
 } 
-
-.paragraph__title,
-.sub-paragraph__title {
-  --accent-color: #000028;
-  --bg-color: #ff0070;
-  background-color: var(--bg-color);
-}
 
 .sub-paragraph__title {
   font-weight: var(--text-slim);
@@ -201,13 +212,13 @@
 .gallery__image {
   /*ширина картинок, чтобы не возникло полосы прокрутки*/
   width: calc(100vw - var(--scrollbar-width));
+  height: 100%;
+  object-fit: cover;
 }
 
 .footer {
-  display: grid;
-  grid-template-rows: var(--size-border) 1fr var(--size-border);
-  height: 100dvh;
-  align-items: center;
+  grid-template-rows: min-content 1fr min-content;
+  padding-block-start: var(--margins);
   justify-items: center;
 }
 
@@ -216,13 +227,6 @@
 }
 
 @media (width > 375px) {
-  .page {
-    --margins: 20px;
-    padding: var(--margins);
-    --section-gap: 80px;
-    --components-gap: 60px;
-  }
-
   .rec::after {
     --margins: 10px;
   }
@@ -252,36 +256,30 @@
   .picture__gallery {
     gap: var(--paragraph-gap);
     grid-template-columns: repeat(3, auto);
-    grid-template-rows: repeat(3, auto);
     grid-template-areas:
       "a a b"
       "c d b"
       "c e e";
   }
 
-  .gallery__image:nth-of-type(1) {
+  .gallery__item:nth-of-type(1) {
     grid-area: a;
   }
 
-  .gallery__image:nth-of-type(2) {
+  .gallery__item:nth-of-type(2) {
     grid-area: b;
   }
 
-  .gallery__image:nth-of-type(3) {
+  .gallery__item:nth-of-type(3) {
     grid-area: c;
   }
 
-  .gallery__image:nth-of-type(4) {
+  .gallery__item:nth-of-type(4) {
     grid-area: d;
   }
 
-  .gallery__image:nth-of-type(5) {
+  .gallery__item:nth-of-type(5) {
     grid-area: e;
-  }
-
-  .gallery__image {
-    object-fit: cover;
-    height: 100%;
   }
 }
 @media (width > 768px) {
@@ -291,11 +289,7 @@
 
   .header, 
   .footer {
-    height: 100vh;
-  }
-
-  .title, .footer__title {
-    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+    min-height: 100vh;
   }
 
   .header__theme-menu {
@@ -315,13 +309,11 @@
 
   .article {
     grid-column: 3/1;
-    justify-self: end;
-    width: 50%;
   }
 
   .section__several__columns {
     grid-template-rows: 1fr auto;
-    grid-auto-flow: column;
+    grid-auto-columns: 1fr;
   }
 
   .section__several__columns .section__title {

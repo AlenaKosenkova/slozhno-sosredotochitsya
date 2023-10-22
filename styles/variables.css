@@ -6,22 +6,37 @@
 :root {
   --bg-color: #000028;
   --accent-color: #ff0070; /*цвет тени заголовка, цвет фона заголовков, цвет некоторых фраз*/
-  --paragraph-color:#F1B2CE;
-  --title-color:#db00ff;
-  --article-color:#000028;
-  --hover-outline-color:rgba(255, 0, 112, 0.40);
+  --paragraph-color: #f1b2ce;
+  --title-color: #db00ff;
+  --article-color: var(--bg-color);
+  --hover-outline-color: rgba(255, 0, 112, 0.4);
   --font-size: 18px;
-  --font: IBM Plex mono, sans-serif;
+  --title-font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  --font: 'IBM Plex mono', monospace;
   --text-bold: 700;
-  --text-slim:400;
-  --line-height-bold:130%;
+  --text-slim: 400;
+  --line-height-bold: 130%;
   --margins: 10px;
   --button-padding-size: 13px;
-  --components-gap:40px;
-  --section-gap:50px;
-  --paragraph-gap:20px;
-  --text-gap:10px;
+  --components-gap: 40px;
+  --section-gap: 50px;
+  --paragraph-gap: 20px;
+  --text-gap: 10px;
   --border-slim: 1px solid;
-  --size-border:25px;
-  --scrollbar-width:calc(100vw - 100%);/*ширины полосы прокрутки*/
+  --size-border: 25px;
+  --scrollbar-width: calc(100vw - 100%); /*ширины полосы прокрутки*/
+}
+
+@media (width > 375px) {
+  :root{
+  --margins: 20px;
+  --section-gap: 80px;
+  --components-gap: 60px;
+}
+}
+
+@media (width > 768px){
+  :root{
+  --title-font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+}
 }
