@@ -3,7 +3,6 @@
 .page {
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
   width: 100%;
-  box-sizing: border-box;
   display: grid;
   gap: var(--components-gap);
   padding: var(--margins);
