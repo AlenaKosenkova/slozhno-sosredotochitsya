@@ -10,18 +10,18 @@
   --title-color:#db00ff;
   --article-color:#000028;
   --hover-outline-color:rgba(255, 0, 112, 0.40);
-  --margins: 10px;
   --font-size: 18px;
   --font: IBM Plex mono, sans-serif;
   --text-bold: 700;
   --text-slim:400;
   --line-height-bold:130%;
+  --margins: 10px;
   --button-padding-size: 13px;
-  --border-slim: 1px solid;
   --components-gap:40px;
   --section-gap:50px;
   --paragraph-gap:20px;
   --text-gap:10px;
+  --border-slim: 1px solid;
   --size-border:25px;
   --scrollbar-width:calc(100vw - 100%);/*ширины полосы прокрутки*/
 }
