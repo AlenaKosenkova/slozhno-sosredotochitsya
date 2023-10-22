@@ -17,8 +17,6 @@
     Так стили написанные ниже будут иметь больший вес,
     чем стили в медиазапросе предпочтений пользователя
   */
-
-  /*Посмотреть цвет в Figma*/
   --bg-color: #fff1f7;
   background-image: url(../images/cover-image-light.png);
 }
@@ -36,7 +34,7 @@
 }
 
 .theme_light .header__theme-menu-button:hover {
-  --hover-outline-color:rgba(50, 49, 45, 0.40);
+  --hover-outline-color: rgba(50, 49, 45, 0.4);
 }
 
 .theme_light .rec {
@@ -105,8 +103,8 @@
     visibility: hidden;
   }
 
-  .header__theme-menu-button:hover{
-    --hover-outline-color:rgba(50, 49, 45, 0.40);
+  .header__theme-menu-button:hover {
+    --hover-outline-color: rgba(50, 49, 45, 0.4);
   }
 
   .title,
@@ -128,7 +126,7 @@
   }
 
   .paragraph__text,
-  .link:hover, 
+  .link:hover,
   .link:focus-visible {
     --paragraph-color: #353430;
   }
