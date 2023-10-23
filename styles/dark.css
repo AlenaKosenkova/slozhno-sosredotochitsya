@@ -24,6 +24,8 @@
 
 .theme_dark .header__theme-menu-button,
 .theme_dark .section__title, 
-.theme_dark .gallery .section__title {
+.theme_dark .gallery .section__title,
+.theme_dark .decorated-zone::before,
+.theme_dark .decorated-zone::after {
   --accent-color: #ff0070;
  }

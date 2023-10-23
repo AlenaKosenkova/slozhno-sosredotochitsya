@@ -18,6 +18,11 @@
   */
 }
 
+.theme_light .decorated-zone::before,
+.theme_light .decorated-zone::after {
+  --accent-color: var(--paragraph-color);
+}
+
 .theme_light .rec {
   visibility: hidden;
 }
@@ -53,6 +58,11 @@
     --article-color: var(--paragraph-color);
     --hover-outline-color: rgba(50, 49, 45, 0.4);
   }
+
+  .decorated-zone::before,
+  .decorated-zone::after {
+  --accent-color: var(--paragraph-color);
+}
 
   .rec {
     visibility: hidden;
