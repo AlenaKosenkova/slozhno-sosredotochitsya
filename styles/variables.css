@@ -13,7 +13,7 @@
   --hover-outline-color: rgba(255, 0, 112, 0.4);
   --font-size: 18px;
   --title-font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
-  --font: 'IBM Plex mono', monospace;
+  --font: "IBM Plex mono", monospace;
   --text-bold: 700;
   --text-slim: 400;
   --line-height-bold: 130%;
@@ -28,16 +28,24 @@
   --scrollbar-width: calc(100vw - 100%); /*ширины полосы прокрутки*/
 }
 
-@media (width > 375px) {
-  :root{
-  --margins: 20px;
-  --section-gap: 80px;
-  --components-gap: 60px;
-}
+@media (width > 576px) {
+  :root {
+    --margins: 20px;
+    --section-gap: 80px;
+    --components-gap: 60px;
+  }
+
+  .rec::after {
+    --margins: 10px;
+  }
+
+  .header__theme-menu-list {
+    --margins: 10px;
+  }
 }
 
-@media (width > 768px){
-  :root{
-  --title-font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
-}
+@media (width > 768px) {
+  :root {
+    --title-font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  }
 }
