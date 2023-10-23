@@ -42,6 +42,10 @@
   .header__theme-menu-list {
     --margins: 10px;
   }
+
+  .gallery {
+    --text-gap: 20px;
+  }
 }
 
 @media (width > 768px) {

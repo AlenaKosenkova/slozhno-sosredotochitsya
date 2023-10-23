@@ -53,15 +53,20 @@
 
 .decorated-zone::after {
   position: absolute;
-  inset-block-end: var(--margins);
   inset-inline-start: 0;
   justify-self: start;
   border-block-end: var(--border-slim) var(--accent-color);
   border-inline-start: var(--border-slim) var(--accent-color);
 }
 
+/*Чтобы не прилипали к границам, 
+но тогда, чуть по макету не сходится. Как лучше?*/
+.header.decorated-zone::after {
+  inset-block-end: calc(2 * var(--margins));
+}
+
 .footer.decorated-zone::before {
-  inset-block-start: var(--margins);
+  inset-block-start: calc(2 * var(--margins));
 }
 
 .footer.decorated-zone::after {
@@ -172,9 +177,17 @@
   color: var(--accent-color);
 }
 
-.text-block {
+.text-block,
+.text-block__content {
   display: grid;
+}
+
+.text-block {
   gap: var(--text-gap);
+}
+
+.text-block__content {
+  row-gap: var(--paragraph-gap);
 }
 
 .section__title,
@@ -225,7 +238,7 @@
 
 .footer {
   display: grid;
-  padding-block-start: var(--margins);
+  padding-block-start: calc(2 * var(--margins));
   justify-items: center;
 }
 
@@ -260,7 +273,7 @@
     column-gap: var(--margins);
   }
 
-  .paragraph__section__column {
+  .text-block__section-column {
     grid-column: 2/3;
   }
 
