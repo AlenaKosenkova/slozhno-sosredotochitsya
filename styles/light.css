@@ -4,137 +4,69 @@
   переключая тему
 */
 
-:root.theme_light {
+.page.theme_light {
   --bg-color: #fff1f7;
+  --bg-image: url(../images/cover-image-light.png);
   --accent-color: #ff8dcb;
   --paragraph-color: #353430;
   --title-color: #ffc2e6;
-  --article-color: #353430;
-}
-
-.page.theme_light {
+  --article-color: var(--paragraph-color);
+  --hover-outline-color: rgba(50, 49, 45, 0.4);
   /* сохраните это селектор в приведённом виде.
     Так стили написанные ниже будут иметь больший вес,
     чем стили в медиазапросе предпочтений пользователя
   */
-  --bg-color: #fff1f7;
-  background-image: url(../images/cover-image-light.png);
-}
-
-.theme_light .header::before,
-.theme_light .header::after,
-.theme_light .header__theme-menu-button,
-.theme_light .header__theme-menu-button:focus-visible,
-.theme_light .section__title,
-.theme_light .paragraph__title,
-.theme_light .sub-paragraph__title,
-.theme_light .footer::before,
-.theme_light .footer::after {
-  --accent-color: #353430;
-}
-
-.theme_light .header__theme-menu-button:hover {
-  --hover-outline-color: rgba(50, 49, 45, 0.4);
 }
 
 .theme_light .rec {
   visibility: hidden;
 }
 
-.theme_light .article {
-  --article-color: #353430;
+.theme_light .header__theme-menu-button {
+ --accent-color: var(--paragraph-color);
 }
 
-.theme_light .title,
-.theme_light .article,
-.theme_light .footer__title {
-  --title-color: #ffc2e6;
+.theme_light .section__title {
+  --accent-color: var(--paragraph-color);
+}
+
+.theme_light .gallery .section__title {
   --accent-color: #ff8dcb;
-}
-
-.theme_light .paragraph__title,
-.theme_light .sub-paragraph__title {
-  --bg-color: #ff8dcb;
-}
-
-.theme_light .link {
-  --accent-color: #ff8dcb;
-}
-
-.theme_light .paragraph__text,
-.theme_light .link:hover,
-.theme_light .link:focus-visible {
-  --paragraph-color: #353430;
 }
 
 @media (width > 768px) {
   .theme_light .title,
-  .theme_light .footer__title {
+  .theme_light .footer__title,
+  .title,
+  .footer {
     --accent-color: #ff0070;
   }
 }
 
 @media (prefers-color-scheme: light) {
-  :root {
+  .page {
     --bg-color: #fff1f7;
+    --bg-image: url(../images/cover-image-light.png);
     --accent-color: #ff8dcb;
     --paragraph-color: #353430;
     --title-color: #ffc2e6;
-    --article-color: #353430;
-  }
-
-  .page {
-    background-image: url(../images/cover-image-light.png);
-  }
-
-  .header::before,
-  .header::after,
-  .header__theme-menu-button,
-  .header__theme-menu-button:focus-visible,
-  .section__title,
-  .paragraph__titlet,
-  .sub-paragraph__title,
-  .footer::before,
-  .footer::after {
-    --accent-color: #353430;
+    --article-color: var(--paragraph-color);
+    --hover-outline-color: rgba(50, 49, 45, 0.4);
   }
 
   .rec {
     visibility: hidden;
   }
 
-  .header__theme-menu-button:hover {
-    --hover-outline-color: rgba(50, 49, 45, 0.4);
+  .header__theme-menu-button {
+    --accent-color: var(--paragraph-color);
+   }
+
+  .section__title {
+    --accent-color: var(--paragraph-color);
   }
 
-  .title,
-  .article,
-  .footer__title {
-    --title-color: #ffc2e6;
+  .gallery .section__title {
     --accent-color: #ff8dcb;
-  }
-
-  .article {
-    color: var(--article-color);
-    background-color: var(--accent-color);
-  }
-
-  .paragraph__title,
-  .sub-paragraph__title {
-    --accent-color: #353430;
-    --bg-color: #ff8dcb;
-  }
-
-  .paragraph__text,
-  .link:hover,
-  .link:focus-visible {
-    --paragraph-color: #353430;
-  }
-}
-
-@media (prefers-color-scheme: light) and (width > 768px) {
-  .title,
-  .footer__title {
-    --accent-color: #ff0070;
   }
 }

@@ -5,6 +5,7 @@
 
 :root {
   --bg-color: #000028;
+  --bg-image: url(../images/cover-image-dark.png);
   --accent-color: #ff0070; /*цвет тени заголовка, цвет фона заголовков, цвет некоторых фраз*/
   --paragraph-color: #f1b2ce;
   --title-color: #db00ff;

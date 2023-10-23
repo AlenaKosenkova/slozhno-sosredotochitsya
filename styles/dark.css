@@ -4,99 +4,26 @@
   переключая тему
 */
 
-:root.theme_dark {
+.page.theme_dark {
   --bg-color: #000028;
   --accent-color: #ff0070;
   --paragraph-color: #f1b2ce;
   --title-color: #db00ff;
   --article-color: #000028;
-}
-
-.page.theme_dark {
+  --bg-image: url(../images/cover-image-dark.png);
+  --hover-outline-color: rgba(255, 0, 112, 0.4);
   /* сохраните этот селектор в приведённом виде.
     Так стили написанные ниже будут иметь больший вес,
     чем стили в медиазапросе предпочтений пользователя
   */
-  background-image: url(../images/cover-image-dark.png);
-}
-
-.theme_dark .header::before,
-.theme_dark .header::after,
-.theme_dark .header__theme-menu-button,
-.theme_dark .header__theme-menu-button:focus-visible,
-.theme_dark .title,
-.theme_dark .section__title,
-.theme_dark .footer::before,
-.theme_dark .footer::after,
-.theme_dark .footer__title,
-.theme_dark .rec,
-.theme_dark .article,
-.theme_dark .link {
-  --accent-color: #ff0070;
 }
 
 .theme_dark .rec {
   visibility: visible;
 }
 
-.theme_dark .title,
-.theme_dark .footer__title {
-  --title-color: #db00ff;
-}
-
-.theme_dark .header__theme-menu-button:hover {
-  --hover-outline-color: rgba(255, 0, 112, 0.4);
-}
-
-.theme_dark .article {
-  --article-color: #000028;
-}
-
-.theme_dark .paragraph__title,
-.theme_dark .sub-paragraph__title {
-  --bg-color: #ff0070;
-  --accent-color: #000028;
-}
-
-.theme_dark .paragraph__text,
-.theme_dark .link:hover,
-.theme_dark .link:focus-visible {
-  --paragraph-color: #f1b2ce;
-}
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg-color: #000028;
-    --accent-color: #ff0070;
-    --paragraph-color: #f1b2ce;
-    --title-color: #db00ff;
-    --article-color: #000028;
-  }
-
-  .page {
-    background-image: url(../images/cover-image-dark.png);
-  }
-
-  .header::before,
-  .header::after,
-  .header__theme-menu-button,
-  .header__theme-menu-button:focus-visible,
-  .section__title,
-  .footer::before,
-  .footer::after {
-    --accent-color: #ff0070;
-  }
-
-  .rec {
-    visibility: visible;
-  }
-
-  .header__theme-menu-button:hover {
-    --hover-outline-color: rgba(255, 0, 112, 0.4);
-  }
-
-  .paragraph__title,
-  .sub-paragraph__title {
-    --accent-color: #000028;
-    --bg-color: #ff0070;
-  }
-}
+.theme_dark .header__theme-menu-button,
+.theme_dark .section__title, 
+.theme_dark .gallery .section__title {
+  --accent-color: #ff0070;
+ }
