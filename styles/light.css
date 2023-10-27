@@ -8,9 +8,10 @@
   --bg-color: #fff1f7;
   --bg-image: url(../images/cover-image-light.png);
   --accent-color: #ff8dcb;
-  --paragraph-color: #353430;
+  --text-color: #353430;
   --title-color: #ffc2e6;
-  --article-color: var(--paragraph-color);
+  --accent-title-bg-color: var(--accent-color);
+  --article-color: var(--text-color);
   --hover-outline-color: rgba(50, 49, 45, 0.4);
   /* сохраните это селектор в приведённом виде.
     Так стили написанные ниже будут иметь больший вес,
@@ -18,25 +19,15 @@
   */
 }
 
+.theme_light .header__theme-menu-button,
+.theme_light .section__title,
 .theme_light .decorated-zone::before,
 .theme_light .decorated-zone::after {
-  --accent-color: var(--paragraph-color);
+  --accent-color: var(--text-color);
 }
 
 .theme_light .rec {
   visibility: hidden;
-}
-
-.theme_light .header__theme-menu-button {
- --accent-color: var(--paragraph-color);
-}
-
-.theme_light .section__title {
-  --accent-color: var(--paragraph-color);
-}
-
-.theme_light .gallery .section__title {
-  --accent-color: #ff8dcb;
 }
 
 @media (width > 768px) {
@@ -53,30 +44,21 @@
     --bg-color: #fff1f7;
     --bg-image: url(../images/cover-image-light.png);
     --accent-color: #ff8dcb;
-    --paragraph-color: #353430;
+    --text-color: #353430;
     --title-color: #ffc2e6;
-    --article-color: var(--paragraph-color);
+    --accent-title-bg-color: var(--accent-color);
+    --article-color: var(--text-color);
     --hover-outline-color: rgba(50, 49, 45, 0.4);
   }
 
   .decorated-zone::before,
-  .decorated-zone::after {
-  --accent-color: var(--paragraph-color);
-}
+  .decorated-zone::after,
+  .header__theme-menu-button,
+  .section__title {
+    --accent-color: var(--text-color);
+  }
 
   .rec {
     visibility: hidden;
-  }
-
-  .header__theme-menu-button {
-    --accent-color: var(--paragraph-color);
-   }
-
-  .section__title {
-    --accent-color: var(--paragraph-color);
-  }
-
-  .gallery .section__title {
-    --accent-color: #ff8dcb;
   }
 }

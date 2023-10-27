@@ -4,25 +4,33 @@
 */
 
 :root {
+  /*ЦВЕТА*/
   --bg-color: #000028;
   --bg-image: url(../images/cover-image-dark.png);
   --accent-color: #ff0070; /*цвет тени заголовка, цвет фона заголовков, цвет некоторых фраз*/
-  --paragraph-color: #f1b2ce;
+  --text-color: #f1b2ce;
   --title-color: #db00ff;
+  --accent-title-bg-color: var(--accent-color);/*Для некоторых секций*/
   --article-color: var(--bg-color);
   --hover-outline-color: rgba(255, 0, 112, 0.4);
+
+  /*ШРИФТЫ*/
   --font-size: 18px;
   --title-font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   --font: "IBM Plex mono", monospace;
   --text-bold: 700;
   --text-slim: 400;
   --line-height-bold: 130%;
+
+  /*ОТСТУПЫ*/
   --margins: 10px;
   --button-padding-size: 13px;
   --components-gap: 40px;
   --section-gap: 50px;
-  --paragraph-gap: 20px;
+  --text-block-gap: 20px;
   --text-gap: 10px;
+
+  /*ДРУГОЕ*/
   --border-slim: 1px solid;
   --size-border: 25px;
   --scrollbar-width: calc(100vw - 100%); /*ширины полосы прокрутки*/
@@ -51,5 +59,12 @@
 @media (width > 768px) {
   :root {
     --title-font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  .gallery .section__title,
+  .section .section__five-step {
+    --accent-color: #ff8dcb;
   }
 }

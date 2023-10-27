@@ -7,8 +7,9 @@
 .page.theme_dark {
   --bg-color: #000028;
   --accent-color: #ff0070;
-  --paragraph-color: #f1b2ce;
+  --text-color: #f1b2ce;
   --title-color: #db00ff;
+  --accent-title-bg-color: var(--accent-color);
   --article-color: #000028;
   --bg-image: url(../images/cover-image-dark.png);
   --hover-outline-color: rgba(255, 0, 112, 0.4);
@@ -23,9 +24,10 @@
 }
 
 .theme_dark .header__theme-menu-button,
-.theme_dark .section__title, 
+.theme_dark .section__title,
 .theme_dark .gallery .section__title,
 .theme_dark .decorated-zone::before,
-.theme_dark .decorated-zone::after {
+.theme_dark .decorated-zone::after,
+.theme_dark .section .section__five-step {
   --accent-color: #ff0070;
- }
+}
