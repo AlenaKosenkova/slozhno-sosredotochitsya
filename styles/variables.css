@@ -10,7 +10,7 @@
   --accent-color: #ff0070; /*цвет тени заголовка, цвет фона заголовков, цвет некоторых фраз*/
   --text-color: #f1b2ce;
   --title-color: #db00ff;
-  --accent-title-bg-color: var(--accent-color);/*Для некоторых секций*/
+  --accent-title-bg-color: var(--accent-color); /*Для некоторых секций*/
   --article-color: var(--bg-color);
   --hover-outline-color: rgba(255, 0, 112, 0.4);
 
@@ -24,8 +24,8 @@
 
   /*ОТСТУПЫ*/
   --margins: 10px;
-  /*--rec-margin: 10px;*//*отказаться от переменной?*/
-  --menu-gap: 10px;
+  /*--rec-margin: 10px;*/ /*отказаться от переменной?*/
+  /*--menu-gap: 10px;*/ /*используется один раз, отказаться от переменной?*/
   --button-padding-size: 13px;
   --components-gap: 40px;
   --section-gap: 50px;
@@ -38,29 +38,8 @@
   --scrollbar-width: calc(100vw - 100%); /*ширины полосы прокрутки*/
 }
 
-
-
-@media (width > 576px) {
-  :root {
-    --margins: 20px;
-    --section-gap: 80px;
-    --components-gap: 60px;
-  }
-
-  /*.rec::after {
-    --margins: 10px;
-  }*/
-
-  /*.header__theme-menu-list {
-    --margins: 10px;
-  }*/
-
-  /*.gallery {
-    --text-gap: 20px;
-  }*/
-}
-
-/*ВОТ ТАК ОСТАВИТЬ????*/
+/*Я не понимаю, как это переопеределить в :root, если это используется в конкретных случаях?
+Может проще создать новые переменные?*/
 
 .theme_light .header__theme-menu-button,
 .theme_light .section__title,
@@ -71,16 +50,27 @@
 
 .theme_dark .header__theme-menu-button,
 .theme_dark .section__title,
-.theme_dark .gallery .section__title,
 .theme_dark .decorated-zone::before,
-.theme_dark .decorated-zone::after,
-.theme_dark .section .section__one-column {
+.theme_dark .decorated-zone::after {
   --accent-color: #ff0070;
+}
+
+@media (width > 576px) {
+  :root {
+    --margins: 20px;
+    --section-gap: 80px;
+    --components-gap: 60px;
+  }
 }
 
 @media (width > 768px) {
   :root {
     --title-font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  }
+
+  .theme_light .title,
+  .theme_light .footer__title {
+    --accent-color: #ff0070;
   }
 }
 
@@ -98,8 +88,6 @@
 }
 
 @media (prefers-color-scheme: light) and (width > 768px) {
-  .theme_light .title,
-  .theme_light .footer__title,
   .title,
   .footer {
     --accent-color: #ff0070;
