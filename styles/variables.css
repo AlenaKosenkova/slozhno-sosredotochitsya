@@ -7,9 +7,13 @@
   /*ЦВЕТА*/
   --bg-color: #000028;
   --bg-image: url(../images/cover-image-dark.png);
-  --accent-color: #ff0070; /*цвет тени заголовка, цвет фона заголовков, цвет некоторых фраз*/
+  --accent-color: #ff0070;
+  --decorated-color: var(--accent-color);
   --text-color: #f1b2ce;
+  --nav-color: var(--accent-color);
   --title-color: #db00ff;
+  --title-shadow: var(--accent-color);
+  --section-title-color: var(--accent-color);
   --accent-title-bg-color: var(--accent-color); /*Для некоторых секций*/
   --article-color: var(--bg-color);
   --hover-outline-color: rgba(255, 0, 112, 0.4);
@@ -24,8 +28,6 @@
 
   /*ОТСТУПЫ*/
   --margins: 10px;
-  /*--rec-margin: 10px;*/ /*отказаться от переменной?*/
-  /*--menu-gap: 10px;*/ /*используется один раз, отказаться от переменной?*/
   --button-padding-size: 13px;
   --components-gap: 40px;
   --section-gap: 50px;
@@ -38,23 +40,6 @@
   --scrollbar-width: calc(100vw - 100%); /*ширины полосы прокрутки*/
 }
 
-/*Я не понимаю, как это переопеределить в :root, если это используется в конкретных случаях?
-Может проще создать новые переменные?*/
-
-.theme_light .header__theme-menu-button,
-.theme_light .section__title,
-.theme_light .decorated-zone::before,
-.theme_light .decorated-zone::after {
-  --accent-color: var(--text-color);
-}
-
-.theme_dark .header__theme-menu-button,
-.theme_dark .section__title,
-.theme_dark .decorated-zone::before,
-.theme_dark .decorated-zone::after {
-  --accent-color: #ff0070;
-}
-
 @media (width > 576px) {
   :root {
     --margins: 20px;
@@ -63,33 +48,10 @@
   }
 }
 
+/*ПОЧЕМУ НЕ СРАБАТЫВАЕТ --title-shadow???*/
 @media (width > 768px) {
   :root {
     --title-font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
-  }
-
-  .theme_light .title,
-  .theme_light .footer__title {
-    --accent-color: #ff0070;
-  }
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    --accent-color: #ff8dcb;
-  }
-
-  .decorated-zone::before,
-  .decorated-zone::after,
-  .header__theme-menu-button,
-  .section__title {
-    --accent-color: var(--text-color);
-  }
-}
-
-@media (prefers-color-scheme: light) and (width > 768px) {
-  .title,
-  .footer {
-    --accent-color: #ff0070;
+    --title-shadow: #ff0070;
   }
 }

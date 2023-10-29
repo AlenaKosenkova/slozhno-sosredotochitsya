@@ -8,8 +8,12 @@
   --bg-color: #fff1f7;
   --bg-image: url(../images/cover-image-light.png);
   --accent-color: #ff8dcb;
+  --decorated-color: var(--text-color);
   --text-color: #353430;
+  --nav-color: var(--text-color);
   --title-color: #ffc2e6;
+  --title-shadow: var(--accent-color);
+  --section-title-color: var(--text-color);
   --accent-title-bg-color: var(--accent-color);
   --article-color: var(--text-color);
   --hover-outline-color: rgba(50, 49, 45, 0.4);
@@ -28,8 +32,12 @@
     --bg-color: #fff1f7;
     --bg-image: url(../images/cover-image-light.png);
     --accent-color: #ff8dcb;
+    --decorated-color: var(--text-color);
     --text-color: #353430;
+    --nav-color: var(--text-color);
     --title-color: #ffc2e6;
+    --title-shadow: var(--accent-color);
+    --section-title-color: var(--text-color);
     --accent-title-bg-color: var(--accent-color);
     --article-color: var(--text-color);
     --hover-outline-color: rgba(50, 49, 45, 0.4);

@@ -48,15 +48,15 @@
 .decorated-zone::before {
   inset-block-start: var(--margins);
   inset-inline-end: var(--margins);
-  border-block-start: var(--border-slim) var(--accent-color);
-  border-inline-end: var(--border-slim) var(--accent-color);
+  border-block-start: var(--border-slim) var(--decorated-color);
+  border-inline-end: var(--border-slim) var(--decorated-color);
 }
 
 .decorated-zone::after {
   inset-inline-start: var(--margins);
   inset-block-end: var(--margins);
-  border-block-end: var(--border-slim) var(--accent-color);
-  border-inline-start: var(--border-slim) var(--accent-color);
+  border-block-end: var(--border-slim) var(--decorated-color);
+  border-inline-start: var(--border-slim) var(--decorated-color);
 }
 
 .rec {
@@ -101,12 +101,12 @@
   padding-inline-start: var(--button-padding-size);
   padding-inline-end: var(--button-padding-size);
   font-size: inherit;
-  color: var(--accent-color);
+  color: var(--nav-color);
 }
 
 .header__theme-menu-button_active {
   pointer-events: none;
-  outline: var(--border-slim) var(--accent-color);
+  outline: var(--border-slim) var(--nav-color);
 }
 
 .header__theme-menu-button:focus {
@@ -115,7 +115,7 @@
 
 .header__theme-menu-button:focus-visible {
   outline: none;
-  border-block-end: var(--border-slim) var(--accent-color);
+  border-block-end: var(--border-slim) var(--nav-color);
 }
 
 .title,
@@ -127,17 +127,18 @@
 }
 
 .title {
-  text-shadow: 4px 4px 0px var(--accent-color);
+  text-shadow: 4px 4px 0px var(--title-shadow);
 }
 
 .article {
   justify-self: end;
-  font-weight: var(--text-bold);
 }
 
 .text-decor {
   background-color: var(--accent-title-bg-color);
   color: var(--article-color);
+  font-size: inherit;
+  font-weight: var(--text-bold);
 }
 
 .main {
@@ -145,6 +146,8 @@
   padding-inline-end: var(--margins);
   display: grid;
   gap: var(--section-gap);
+  color: var(--text-color);
+  font-weight: var(--text-slim);
 
   /*сновное содержимое (.main ) должно занимать все доступное место на экране.*/
   flex: 1;
@@ -157,17 +160,9 @@
 }
 
 .section__title {
-  color: var(--accent-color);
-}
-
-.section__title-accent {
-  color: var(--article-color);
-}
-
-.section__title,
-.text-block__title {
   font-size: inherit;
   font-weight: var(--text-bold);
+  color: var(--section-title-color);
 }
 
 .text-block__title-slim {
@@ -180,13 +175,14 @@
   gap: var(--text-gap);
 }
 
-.text-block__description {
-  font-size: inherit;
+/*ПРОВЕРИТЬ ПО pixelPerfect*/
+/*.text-block__description {
   color: var(--text-color);
   font-weight: var(--text-slim);
-}
+}*/
 
-.section__block {
+
+.section__several-columns__section-block {
   display: flex;
   flex-direction: column;
   row-gap: var(--text-block-gap);
@@ -209,6 +205,11 @@
   gap: var(--margins);
 }
 
+/*Я не уверена, что так можно.... но вообще у меня section__title розового цвета*/
+.gallery .section__title {
+  color: var(--article-color);
+}
+
 .picture__gallery {
   display: grid;
   gap: var(--margins);
@@ -220,6 +221,7 @@
   width: calc(100vw - var(--scrollbar-width));
   height: 100%;
   object-fit: cover;
+  object-position: center;
 }
 
 .footer {
@@ -231,7 +233,7 @@
 }
 
 .footer__title {
-  text-shadow: 2px 2px 0px var(--accent-color);
+  text-shadow: 2px 2px 0px var(--title-shadow);
 }
 
 @media (hover: hover) {
@@ -257,8 +259,9 @@
   }
 
   /*по макету вроде совпадает*/
+  /*сделать скриншоты*/
   .section__column {
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: repeat(3, 1fr);
   }
 
   .text-block__section-column {
@@ -319,7 +322,7 @@
     grid-auto-flow: column;
   }
 
-  .section__block {
+  .section__several-columns__section-block {
     grid-column: 1/-1;
     gap: var(--text-block-gap);
     flex-direction: row;
