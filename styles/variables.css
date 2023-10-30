@@ -12,7 +12,8 @@
   --text-color: #f1b2ce;
   --nav-color: var(--accent-color);
   --title-color: #db00ff;
-  --title-shadow: var(--accent-color);
+  /*--title-shadow: var(--accent-color);*/
+  --title-shadow-1024: #ff0070;
   --section-title-color: var(--accent-color);
   --accent-title-bg-color: var(--accent-color); /*Для некоторых секций*/
   --article-color: var(--bg-color);
@@ -48,10 +49,8 @@
   }
 }
 
-/*ПОЧЕМУ НЕ СРАБАТЫВАЕТ --title-shadow???*/
 @media (width > 768px) {
   :root {
     --title-font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
-    --title-shadow: #ff0070;
   }
 }

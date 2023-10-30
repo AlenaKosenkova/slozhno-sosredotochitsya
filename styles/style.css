@@ -127,18 +127,11 @@
 }
 
 .title {
-  text-shadow: 4px 4px 0px var(--title-shadow);
+  text-shadow: 4px 4px 0px var(--accent-color);
 }
 
 .article {
   justify-self: end;
-}
-
-.text-decor {
-  background-color: var(--accent-title-bg-color);
-  color: var(--article-color);
-  font-size: inherit;
-  font-weight: var(--text-bold);
 }
 
 .main {
@@ -159,10 +152,18 @@
   gap: var(--text-block-gap);
 }
 
+/*section__title и text-decor не менять местами, т. к. приоритет*/
 .section__title {
   font-size: inherit;
   font-weight: var(--text-bold);
   color: var(--section-title-color);
+}
+
+.text-decor {
+  background-color: var(--accent-title-bg-color);
+  color: var(--article-color);
+  font-size: inherit;
+  font-weight: var(--text-bold);
 }
 
 .text-block__title-slim {
@@ -174,13 +175,6 @@
   flex-direction: column;
   gap: var(--text-gap);
 }
-
-/*ПРОВЕРИТЬ ПО pixelPerfect*/
-/*.text-block__description {
-  color: var(--text-color);
-  font-weight: var(--text-slim);
-}*/
-
 
 .section__several-columns__section-block {
   display: flex;
@@ -203,11 +197,6 @@
 
 .gallery {
   gap: var(--margins);
-}
-
-/*Я не уверена, что так можно.... но вообще у меня section__title розового цвета*/
-.gallery .section__title {
-  color: var(--article-color);
 }
 
 .picture__gallery {
@@ -233,7 +222,7 @@
 }
 
 .footer__title {
-  text-shadow: 2px 2px 0px var(--title-shadow);
+  text-shadow: 2px 2px 0px var(--accent-color);
 }
 
 @media (hover: hover) {
@@ -258,8 +247,6 @@
     width: 50%;
   }
 
-  /*по макету вроде совпадает*/
-  /*сделать скриншоты*/
   .section__column {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -312,6 +299,14 @@
   }
 }
 @media (width > 768px) {
+  .title {
+    text-shadow: 4px 4px 0px var(--title-shadow-1024);
+  }
+
+  .footer__title {
+    text-shadow: 2px 2px 0px var(--title-shadow-1024);
+  }
+
   .header__theme-menu {
     grid-row: 1;
     justify-self: center;
